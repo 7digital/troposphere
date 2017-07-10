@@ -259,13 +259,15 @@ class JobFlowInstancesConfig(AWSProperty):
     props = {
         'AdditionalMasterSecurityGroups': ([basestring], False),
         'AdditionalSlaveSecurityGroups': ([basestring], False),
-        'CoreInstanceGroup': (InstanceGroupConfigProperty, True),
+        'CoreInstanceFleet': (InstanceFleetConfig, False),
+        'CoreInstanceGroup': (InstanceGroupConfigProperty, False),
         'Ec2KeyName': (basestring, False),
         'Ec2SubnetId': (basestring, False),
         'EmrManagedMasterSecurityGroup': (basestring, False),
         'EmrManagedSlaveSecurityGroup': (basestring, False),
         'HadoopVersion': (basestring, False),
-        'MasterInstanceGroup': (InstanceGroupConfigProperty, True),
+        'MasterInstanceFleet': (InstanceFleetConfig, False),
+        'MasterInstanceGroup': (InstanceGroupConfigProperty, False),
         'Placement': (PlacementType, False),
         'ServiceAccessSecurityGroup': (basestring, False),
         'TerminationProtected': (boolean, False)
