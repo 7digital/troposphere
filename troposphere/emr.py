@@ -248,6 +248,37 @@ class InstanceGroupConfigProperty(AWSProperty):
         'Name': (basestring, False),
     }
 
+class InstanceFleetConfig(AWSObject):
+    resource_type = "AWS::EMR::InstanceFleetConfig"
+
+    props = {
+        'ClusterId': (basestring, True),
+        'InstanceFleetType': (basestring, True),
+        'InstanceTypeConfigs': ([InstanceTypeConfig], False),
+        'LaunchSpecifications':
+            (InstanceFleetProvisioningSpecifications, False),
+        'Name': (basestring, False),
+        'TargetOnDemandCapacity': (positive_integer, False),
+        'TargetSpotCapacity': (positive_integer, False),
+    }
+
+
+class InstanceGroupConfig(AWSObject):
+    resource_type = "AWS::EMR::InstanceGroupConfig"
+
+    props = {
+        'AutoScalingPolicy': (AutoScalingPolicy, False),
+        'BidPrice': (basestring, False),
+        'Configurations': ([Configuration], False),
+        'EbsConfiguration': (EbsConfiguration, False),
+        'InstanceCount': (integer, True),
+        'InstanceRole': (basestring, True),
+        'InstanceType': (basestring, True),
+        'JobFlowId': (basestring, True),
+        'Market': (market_validator, False),
+        'Name': (basestring, False)
+    }
+
 
 class PlacementType(AWSProperty):
     props = {
@@ -317,38 +348,6 @@ class SpotProvisioningSpecification(AWSProperty):
 class InstanceFleetProvisioningSpecifications(AWSProperty):
     props = {
         'SpotSpecification': (SpotProvisioningSpecification, True),
-    }
-
-
-class InstanceFleetConfig(AWSObject):
-    resource_type = "AWS::EMR::InstanceFleetConfig"
-
-    props = {
-        'ClusterId': (basestring, True),
-        'InstanceFleetType': (basestring, True),
-        'InstanceTypeConfigs': ([InstanceTypeConfig], False),
-        'LaunchSpecifications':
-            (InstanceFleetProvisioningSpecifications, False),
-        'Name': (basestring, False),
-        'TargetOnDemandCapacity': (positive_integer, False),
-        'TargetSpotCapacity': (positive_integer, False),
-    }
-
-
-class InstanceGroupConfig(AWSObject):
-    resource_type = "AWS::EMR::InstanceGroupConfig"
-
-    props = {
-        'AutoScalingPolicy': (AutoScalingPolicy, False),
-        'BidPrice': (basestring, False),
-        'Configurations': ([Configuration], False),
-        'EbsConfiguration': (EbsConfiguration, False),
-        'InstanceCount': (integer, True),
-        'InstanceRole': (basestring, True),
-        'InstanceType': (basestring, True),
-        'JobFlowId': (basestring, True),
-        'Market': (market_validator, False),
-        'Name': (basestring, False)
     }
 
 
