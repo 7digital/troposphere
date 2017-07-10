@@ -235,6 +235,19 @@ class AutoScalingPolicy(AWSProperty):
         'Rules': ([ScalingRule], False),
     }
 
+class SpotProvisioningSpecification(AWSProperty):
+    props = {
+        'BlockDurationMinutes': (positive_integer, False),
+        'TimeoutAction': (basestring, True),
+        'TimeoutDurationMinutes': (positive_integer, True),
+    }
+
+
+class InstanceFleetProvisioningSpecifications(AWSProperty):
+    props = {
+        'SpotSpecification': (SpotProvisioningSpecification, True),
+    }
+
 
 class InstanceGroupConfigProperty(AWSProperty):
     props = {
@@ -333,20 +346,6 @@ class Cluster(AWSObject):
         'AutoScalingRole': (basestring, False),
         'Tags': (list, False),
         'VisibleToAllUsers': (boolean, False)
-    }
-
-
-class SpotProvisioningSpecification(AWSProperty):
-    props = {
-        'BlockDurationMinutes': (positive_integer, False),
-        'TimeoutAction': (basestring, True),
-        'TimeoutDurationMinutes': (positive_integer, True),
-    }
-
-
-class InstanceFleetProvisioningSpecifications(AWSProperty):
-    props = {
-        'SpotSpecification': (SpotProvisioningSpecification, True),
     }
 
 
