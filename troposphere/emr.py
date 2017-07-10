@@ -248,6 +248,16 @@ class InstanceGroupConfigProperty(AWSProperty):
         'Name': (basestring, False),
     }
 
+class InstanceTypeConfig(AWSProperty):
+    props = {
+        'BidPrice': (basestring, False),
+        'BidPriceAsPercentageOfOnDemandPrice': (basestring, False),
+        'Configurations': ([Configuration], False),
+        'EbsConfiguration': (EbsConfiguration, False),
+        'InstanceType': (basestring, True),
+        'WeightedCapacity': (positive_integer, False),
+    }
+
 class InstanceFleetConfig(AWSObject):
     resource_type = "AWS::EMR::InstanceFleetConfig"
 
@@ -323,17 +333,6 @@ class Cluster(AWSObject):
         'AutoScalingRole': (basestring, False),
         'Tags': (list, False),
         'VisibleToAllUsers': (boolean, False)
-    }
-
-
-class InstanceTypeConfig(AWSProperty):
-    props = {
-        'BidPrice': (basestring, False),
-        'BidPriceAsPercentageOfOnDemandPrice': (basestring, False),
-        'Configurations': ([Configuration], False),
-        'EbsConfiguration': (EbsConfiguration, False),
-        'InstanceType': (basestring, True),
-        'WeightedCapacity': (positive_integer, False),
     }
 
 
