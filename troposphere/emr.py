@@ -275,8 +275,6 @@ class InstanceFleetConfig(AWSObject):
     resource_type = "AWS::EMR::InstanceFleetConfig"
 
     props = {
-        'ClusterId': (basestring, True),
-        'InstanceFleetType': (basestring, True),
         'InstanceTypeConfigs': ([InstanceTypeConfig], False),
         'LaunchSpecifications':
             (InstanceFleetProvisioningSpecifications, False),
