@@ -235,6 +235,7 @@ class AutoScalingPolicy(AWSProperty):
         'Rules': ([ScalingRule], False),
     }
 
+
 class SpotProvisioningSpecification(AWSProperty):
     props = {
         'BlockDurationMinutes': (positive_integer, False),
@@ -261,6 +262,7 @@ class InstanceGroupConfigProperty(AWSProperty):
         'Name': (basestring, False),
     }
 
+
 class InstanceTypeConfig(AWSProperty):
     props = {
         'BidPrice': (basestring, False),
@@ -270,6 +272,7 @@ class InstanceTypeConfig(AWSProperty):
         'InstanceType': (basestring, True),
         'WeightedCapacity': (positive_integer, False),
     }
+
 
 class InstanceFleetConfig(AWSProperty):
     props = {
