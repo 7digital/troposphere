@@ -271,9 +271,7 @@ class InstanceTypeConfig(AWSProperty):
         'WeightedCapacity': (positive_integer, False),
     }
 
-class InstanceFleetConfig(AWSObject):
-    resource_type = "AWS::EMR::InstanceFleetConfig"
-
+class InstanceFleetConfig(AWSProperty):
     props = {
         'InstanceTypeConfigs': ([InstanceTypeConfig], False),
         'LaunchSpecifications':
