@@ -36,7 +36,7 @@ class BeanstalkEnvironmentConfig(AWSProperty):
 
 class BeanstalkElastigroupConfig(AWSProperty):
     props = {
-        'name': (basestring, True)
+        'name': (basestring, True),
         'region': (basestring, True),
         'product': (basestring, True),
         # 'strategy': (BeanstalkElastigroupStrategy, True),
