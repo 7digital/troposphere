@@ -1,4 +1,4 @@
-from troposphere.cloudformation import AWSCustomObject, AWSProperty, integer
+from troposphere.cloudformation import AWSCustomObject, AWSProperty, integer, boolean
 
 class BeanstalkElastigroupLaunchSpecification(AWSProperty):
     props = {
